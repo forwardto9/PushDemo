@@ -1,0 +1,12 @@
+
+*.xcuserstate
+
+*.xcbkptlist
+
+*.xcscmblueprint
+
+*.xcscheme
+
+demo/XG-Demo.xcodeproj/xcuserdata/tyzual.xcuserdatad/xcschemes/xcschememanagement.plist
+
+demo/XG-Demo.xcodeproj/xcuserdata/uwei.xcuserdatad/xcschemes/xcschememanagement.plist

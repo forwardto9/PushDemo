@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uv-L4-baW">
+                                <rect key="frame" x="114.5" y="50" width="145.5" height="42"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="XGDemo">
+                                        <attributes>
+                                            <font key="NSFont" size="36" name=".SFNSText"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbB-jx-924">
+                                <rect key="frame" x="156" y="152" width="62" height="30"/>
+                                <state key="normal" title="设置标签"/>
+                                <connections>
+                                    <action selector="onSetTag:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4PZ-HY-hhp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXX-CB-7QX">
+                                <rect key="frame" x="156" y="202" width="62" height="30"/>
+                                <state key="normal" title="删除标签"/>
+                                <connections>
+                                    <action selector="onDelTag:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W9h-y7-PUy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6e-z5-2Gf">
+                                <rect key="frame" x="156.5" y="302" width="62" height="30"/>
+                                <state key="normal" title="删除账号"/>
+                                <connections>
+                                    <action selector="onDelAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="04t-ng-QNC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zi-F5-HNk">
+                                <rect key="frame" x="156.5" y="252" width="62" height="30"/>
+                                <state key="normal" title="设置账号"/>
+                                <connections>
+                                    <action selector="onSetAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A7h-E0-PkK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Zi-F5-HNk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0F5-bI-L9R"/>
+                            <constraint firstItem="A6e-z5-2Gf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2LL-Dd-TBl"/>
+                            <constraint firstItem="8Zi-F5-HNk" firstAttribute="top" secondItem="XXX-CB-7QX" secondAttribute="bottom" constant="20" id="F78-Bt-Ewd"/>
+                            <constraint firstItem="A6e-z5-2Gf" firstAttribute="top" secondItem="8Zi-F5-HNk" secondAttribute="bottom" constant="20" id="Gvx-wE-voY"/>
+                            <constraint firstItem="XXX-CB-7QX" firstAttribute="top" secondItem="JbB-jx-924" secondAttribute="bottom" constant="20" id="R2j-is-tsq"/>
+                            <constraint firstItem="1uv-L4-baW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="TW5-qh-91h"/>
+                            <constraint firstItem="XXX-CB-7QX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VNA-Nw-3Eu"/>
+                            <constraint firstItem="JbB-jx-924" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bVS-bX-ikf"/>
+                            <constraint firstItem="1uv-L4-baW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iEJ-gs-PZ5"/>
+                            <constraint firstItem="JbB-jx-924" firstAttribute="top" secondItem="1uv-L4-baW" secondAttribute="bottom" constant="60" id="w1Z-UG-hsf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
