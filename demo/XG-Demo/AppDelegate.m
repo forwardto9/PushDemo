@@ -10,7 +10,6 @@
 #import "XGPush.h"
 #import "XGSetting.h"
 
-
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 
 #import <UserNotifications/UserNotifications.h>
@@ -23,6 +22,7 @@
 @end
 
 @implementation AppDelegate
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -42,9 +42,16 @@
 		NSLog(@"[XGDemo] Handle launching error");
 	}];
 
+    
+    [[UNUserNotificationCenter currentNotificationCenter] getDeliveredNotificationsWithCompletionHandler:^(NSArray<UNNotification *> * _Nonnull notifications) {
+        for (UNNotification *notification in notifications) {
+            NSLog(@"%@", [notification date]);
+        }
+    }];
+    
+    
 	return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 	// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
