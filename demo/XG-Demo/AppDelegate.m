@@ -50,6 +50,8 @@
     }];
     
     
+    application.applicationIconBadgeNumber = 0;
+    
 	return YES;
 }
 
@@ -222,7 +224,7 @@
     
 	[center requestAuthorizationWithOptions:UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert completionHandler:^(BOOL granted, NSError * _Nullable error) {
 		if (granted) {
-            UNNotificationAction *action1 = [UNNotificationAction actionWithIdentifier:@"xg000001" title:@"xgAction1" options:UNNotificationActionOptionForeground];
+            UNNotificationAction *action1 = [UNNotificationAction actionWithIdentifier:@"xg000001" title:@"xgAction1" options:UNNotificationActionOptionForeground|UNNotificationActionOptionDestructive];
             UNNotificationAction *action2 = [UNNotificationAction actionWithIdentifier:@"xg000002" title:@"xgAction2" options:UNNotificationActionOptionNone];
             UNNotificationAction *action3 = [UNNotificationAction actionWithIdentifier:@"xg000003" title:@"xgAction3" options:UNNotificationActionOptionDestructive];
             UNTextInputNotificationAction *action4 = [UNTextInputNotificationAction actionWithIdentifier:@"xg000004" title:@"xgAction4" options:UNNotificationActionOptionAuthenticationRequired textInputButtonTitle:@"xgTextInput" textInputPlaceholder:@"xgdemo"];
@@ -235,9 +237,24 @@
 #endif
 }
 
-- (void)registerPush8to9{
+- (void)registerPush8to9 {
 	UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
-	UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    
+    
+    UIMutableUserNotificationCategory *category = [[UIMutableUserNotificationCategory alloc] init];
+    [category setIdentifier:@"xgCategory"];
+    
+    UIMutableUserNotificationAction *action = [UIMutableUserNotificationAction new];
+    [action setIdentifier:@"xgAction001"];
+    [action setTitle:@"xgAction"];
+    [action setActivationMode:UIUserNotificationActivationModeBackground];
+    [action setAuthenticationRequired:YES];
+    [action setDestructive:YES];
+    
+    [category setActions:@[action] forContext:UIUserNotificationActionContextDefault];
+    
+	UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:[NSSet setWithObject:category]];
+    
 	[[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
 	[[UIApplication sharedApplication] registerForRemoteNotifications];
 }
